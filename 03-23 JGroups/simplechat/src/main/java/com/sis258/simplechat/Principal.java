@@ -4,6 +4,8 @@
 
 package com.sis258.simplechat;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Dell
@@ -11,6 +13,14 @@ package com.sis258.simplechat;
 public class Principal {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Introduzca su nombre");
+            String nombre;
+            nombre = sc.next();
+            new SimpleChat(nombre).start();
+        } catch (Exception ex) {
+            System.getLogger(Principal.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
     }
 }
